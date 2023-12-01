@@ -13,8 +13,8 @@ export const isConfiguredAzure = () => {
 }
 
 export async function analyzeImage(url) {
-    const subscriptionKey = '9a6c9f6cbb024a8bb9948214df1cb831';
-    const uriBase = 'https://comvision-gitskills.cognitiveservices.azure.com/vision/v3.1/analyze';
+    const subscriptionKey = process.env.REACT_APP_AZURE_COMPUTER_VISION_KEY;
+    const uriBase = process.env.REACT_APP_AZURE_COMPUTER_VISION_ENDPOINT;
     const params = {
         'captionResults': true, // Add captionResults to the params
         'caption': true,
