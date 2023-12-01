@@ -9,7 +9,7 @@ export const isConfiguredOpenAI = () => {
 }
 export const generateImage = async (prompt) => {
         
-        const apiKey = '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';
+        const apiKey = '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';
         const apiUrl = 'https://api.openai.com/v1/images/generations'; // Replace with the actual API endpoint
         
         const requestOptions = {

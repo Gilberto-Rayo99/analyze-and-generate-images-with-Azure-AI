@@ -40,7 +40,7 @@ function App() {
 
       <div>
         <h2>OPENAI Image Generator</h2>
-        <img style={{ width: 300, height: 300 }} src={apiResponse2} alt="Image generate" />
+        <img style={{ width: 500, height: 500 }} src={apiResponse2} alt="Image generate" />
       </div>
     );
   };
