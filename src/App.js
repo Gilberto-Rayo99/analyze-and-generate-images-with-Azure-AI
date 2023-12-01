@@ -80,9 +80,14 @@ const validateUrl = (inputValue) => {
       return;
     }
     const response = await generateImage(inputValue);
- 
-      setApiResponse2(response.data[0].url);
-      setIsProcessing(false);
+ if (response.error) {
+ alert(response.error.message);
+ setIsProcessing(false);
+ return;
+ }
+ setApiResponse2(response.data[0].url);
+ setIsProcessing(false);
+      
   };
 
   return (
@@ -97,10 +102,12 @@ const validateUrl = (inputValue) => {
             onChange={(e) => setInputValue(e.target.value)}
           />
           <br />
+          <div className='buttons'>
           <button style={{ margin: 10 }} onClick={handleAnalyzeClick}>
             Analyze
           </button>
           <button onClick={handleGenerateClick}>Generate</button>
+          </div>
           <br />
           <br />
           {/* show GenerateImage or DisplayResults based on the button clicked */}
